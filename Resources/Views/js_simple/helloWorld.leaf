@@ -1,0 +1,19 @@
+#set("script") {
+    <!-- load compiled template simple.soy -->
+    <script src="/soy/simple.js"></script>
+}
+
+#set("body") {
+    <div id="container">
+    </div>
+}
+
+#set("onload") {
+    var payload = new Object();
+
+    var container = document.getElementById("container");
+    output = soy.examples.simple.helloWorld();
+    container.innerHTML = output.content;
+}
+
+#embed("soy")

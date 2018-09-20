@@ -1,0 +1,15 @@
+#set("body") {
+    <h3>JS Examples</h3>
+    <div>
+        <ul>
+            <li><a href="/js/simple/helloWorld">Hello World</a></li>
+            <li><a href="/js/simple/helloName">Hello 'name'</a></li>
+            <li><a href="/js/simple/helloNames">Hello 'names'</a></li>
+        </ul>
+    </div>
+}
+
+#set("onload") {
+}
+
+#embed("soy")

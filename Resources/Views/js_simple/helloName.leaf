@@ -1,0 +1,36 @@
+#set("script") {
+    <!-- load compiled template simple.soy -->
+    <script src="/soy/simple.js"></script>
+}
+
+#set("body") {
+    <form method="GET" onsubmit="return false;">
+        <label for="name">What's your name? <input name="name" type="text"></label> 
+        <button onclick="sayhello(document.forms[0]['name'].value);">Click</button>
+    </form>
+
+    <div id="container">
+    </div>
+}
+
+#set("onload") {
+    function sayhello(yourName) {
+        if (yourName) {
+            var payload = new Object();
+            payload.name = yourName || "Unknown";
+
+            var container = document.getElementById("container");
+            output = soy.examples.simple.helloName(payload);
+            container.innerHTML = output.content;
+        \} else {
+            var container = document.getElementById("container");
+            container.innerHTML = "";
+        \}        
+    \}
+
+    #if(name) {
+        sayhello("#(name)");
+    }
+}
+
+#embed("soy")

@@ -8,12 +8,12 @@
     </div>
 }
 
-#set("runscript") {
+#set("onload") {
     var payload = new Object();
-    payload["name"] = "Ed";
+    payload["name"] = '#(name)';
 
-    var object = document.getElementById("helloName");
-    object.innerHTML = soy.examples.simple.helloName(payload);
+    var container = document.getElementById("helloName");
+    container.innerHTML = soy.examples.simple.helloName(payload).content;
 }
 
 #embed("soy")

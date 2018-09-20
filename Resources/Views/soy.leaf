@@ -24,6 +24,6 @@
 #get(body)
 </body>
 <script>
-#get(runscript)
+#get(onload)
 </script>
 </html>
