@@ -22,8 +22,7 @@
 	}
     </style>
     <!-- Soy utils with Closure Library -->
-    <!-- script src="/js/goog/base.js"></script -->
-    <script src="https://cdn.rawgit.com/google/closure-library/master/closure/goog/base.js"></script>
+    <script src="/js/goog/base.js"></script>
     <script src="/js/soy_requirements_onefile.js"></script>
     <script src="/js/soyutils_usegoog.js"></script>
 
