@@ -1,36 +1,43 @@
 #set("script") {
     <!-- load compiled template simple.soy -->
     <script src="/soy/simple.js"></script>
+    <script>
+    function renderOnSubmit(name) {
+        var container = document.getElementById("container");
+        output = soy.examples.simple.helloName({name: name\});
+        container.innerHTML = output.content;
+    \}
+    </script>
 }
 
 #set("body") {
+    <h4>Template</h4>
+    <pre>
+/**
+ * Says hello to a person (or to the world if no person is given).
+ */
+{namespace soy.examples.simple\}
+
+{template .helloName\}
+  {@param? name: string\}  /** The name of the person to say hello to. */
+  {if $name\}
+    {msg desc="Says hello to a person."\}
+      Hello {$name\}!
+    {/msg\}
+  {else\}
+    {call .helloWorld /\}
+  {/if\}
+{/template\}
+    </pre>
+
+    <h4>Input Form</h4>
     <form method="GET" onsubmit="return false;">
         <label for="name">What's your name? <input name="name" type="text"></label> 
-        <button onclick="sayhello(document.forms[0]['name'].value);">Click</button>
+        <button onclick="renderOnSubmit(document.forms[0]['name'].value);">Click</button>
     </form>
 
-    <div id="container">
-    </div>
-}
-
-#set("onload") {
-    function sayhello(yourName) {
-        if (yourName) {
-            var payload = new Object();
-            payload.name = yourName || "Unknown";
-
-            var container = document.getElementById("container");
-            output = soy.examples.simple.helloName(payload);
-            container.innerHTML = output.content;
-        \} else {
-            var container = document.getElementById("container");
-            container.innerHTML = "";
-        \}        
-    \}
-
-    #if(name) {
-        sayhello("#(name)");
-    }
+    <h4>Output</h4>
+    <div id="container"/>
 }
 
 #embed("soy")

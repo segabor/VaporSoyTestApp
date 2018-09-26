@@ -4,16 +4,37 @@
 }
 
 #set("body") {
-    <div id="helloName">
-    </div>
+    <h4>Template</h4>
+    <pre>
+{namespace soy.examples.simple\}
+
+/**
+ * Say hello to a list of people.
+ */
+{template .helloNames\}
+  {@param names: list<string>\}  /** List of names of the people to say hello to. */
+  {for $name in $names\}
+    {call .helloName\}
+      {param name: $name /\}
+    {/call\}
+    {if not isLast($name)\}
+      <br>  // break after every line except the last
+    {/if\}
+  {ifempty\}
+    // If names list is empty, say "Hello world".
+    {call .helloWorld /\}
+  {/for\}
+{/template\}
+    </pre>
+
+    <h4>Output</h4>
+    <div id="output"/>
 }
 
 #set("onload") {
-    var payload = new Object();
-    payload["name"] = '#(name)';
-
-    var container = document.getElementById("helloName");
-    container.innerHTML = soy.examples.simple.helloName(payload).content;
+    var container = document.getElementById("output");
+    output = soy.examples.simple.helloNames({names: ["John", "Peter", "Ramsey"]\});
+    container.innerHTML = output.content;
 }
 
 #embed("soy")

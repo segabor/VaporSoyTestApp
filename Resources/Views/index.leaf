@@ -1,10 +1,14 @@
 #set("body") {
-    <h3>JS Examples</h3>
+    <h2>Google Closure Templates Demo</h2>
+
+    <h3>Soy Template<h3>
+    <h4>simple.soy (<a href="https://raw.githubusercontent.com/google/closure-templates/master/examples/simple.soy">source</a>)</h4>
+    <h3>Client-Side Rendering</h3>
     <div>
         <ul>
             <li><a href="/js/simple/helloWorld">Hello World</a></li>
-            <li><a href="/js/simple/helloName">Hello 'name'</a></li>
-            <li><a href="/js/simple/helloNames">Hello 'names'</a></li>
+            <li><a href="/js/simple/helloName">Hello $name</a></li>
+            <li><a href="/js/simple/helloNames">Hello $names</a></li>
         </ul>
     </div>
 }

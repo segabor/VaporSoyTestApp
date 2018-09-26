@@ -4,14 +4,26 @@
 }
 
 #set("body") {
-    <div id="container">
-    </div>
+    <h4>Template</h4>
+    <pre>
+{namespace soy.examples.simple\}
+
+/**
+ * Says hello to the world.
+ */
+{template .helloWorld\}
+  {msg desc="Says hello to the world."\}
+    Hello world!
+  {/msg\}
+{/template\}
+    </pre>
+
+    <h4>Output</h4>
+    <div id="output"/>
 }
 
 #set("onload") {
-    var payload = new Object();
-
-    var container = document.getElementById("container");
+    var container = document.getElementById("output");
     output = soy.examples.simple.helloWorld();
     container.innerHTML = output.content;
 }
