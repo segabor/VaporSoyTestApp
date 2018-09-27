@@ -28,7 +28,7 @@
     </pre>
 
     <h4>Output</h4>
-    <div id="output"/>
+    <div id="output"></div>
 }
 
 #set("onload") {

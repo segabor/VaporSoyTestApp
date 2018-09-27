@@ -3,7 +3,7 @@
     <script src="/soy/simple.js"></script>
     <script>
     function renderOnSubmit(name) {
-        var container = document.getElementById("container");
+        var container = document.getElementById("output");
         output = soy.examples.simple.helloName({name: name\});
         container.innerHTML = output.content;
     \}
@@ -37,7 +37,7 @@
     </form>
 
     <h4>Output</h4>
-    <div id="container"/>
+    <div id="output"></div>
 }
 
 #embed("soy")
