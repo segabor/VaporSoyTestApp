@@ -1,5 +1,5 @@
 SOY_BASE=./Resources/SoyTemplates
-SOY_OUT=./Sources/Soy
+SOY_OUT=./Sources/App/Renderers
 
 if [ ! -d $SOY_BASE ]; then
   echo Missing Soy templates folder, aborting ...
