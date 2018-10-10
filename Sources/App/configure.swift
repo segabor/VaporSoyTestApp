@@ -18,4 +18,12 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     middlewares.use(FileMiddleware.self) // Serves files from `Public/` directory
     middlewares.use(ErrorMiddleware.self) // Catches errors and converts to HTTP response
     services.register(middlewares)
+
+    /// My custom tags
+    services.register { container -> LeafTagConfig in
+        var config = LeafTagConfig.default()
+
+        config.use(SoyTemplateRenderer(), as: "soy")
+        return config
+    }
 }

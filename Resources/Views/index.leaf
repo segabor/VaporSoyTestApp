@@ -11,6 +11,15 @@
             <li><a href="/js/simple/helloNames">Hello $names</a></li>
         </ul>
     </div>
+
+    <h3>Server-Side Rendering</h3>
+    <div>
+        <ul>
+            <li><a href="/swift/simple/helloWorld">Hello World</a></li>
+            <li><a href="/swift/simple/helloName">Hello $name</a></li>
+            <li><a href="/swift/simple/helloNames">Hello $names</a></li>
+        </ul>
+    </div>
 }
 
 #set("onload") {

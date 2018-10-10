@@ -1,0 +1,25 @@
+#set("script") {
+    <!-- load compiled template simple.soy -->
+    <script src="/soy/simple.js"></script>
+}
+
+#set("body") {
+    <h4>Template</h4>
+    <pre>
+{namespace soy.examples.simple\}
+
+/**
+ * Says hello to the world.
+ */
+{template .helloWorld\}
+  {msg desc="Says hello to the world."\}
+    Hello world!
+  {/msg\}
+{/template\}
+    </pre>
+
+    <h4>Output</h4>
+    <div id="output">#soy("soy.examples.simple.helloWorld")</div>
+}
+
+#embed("soy")
