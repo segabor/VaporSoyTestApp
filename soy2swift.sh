@@ -11,6 +11,6 @@ if [ ! -d $SOY_OUT ]; then
 fi
 
 java -jar Tools/Soy/lib/soy-2018-03-14-SoyToSwiftSrcCompiler.jar \
-  --outputPathFormat ${SOY_OUT}/Examples/Simple.swift \
+  --outputPathFormat ${SOY_OUT}/Simple.swift \
   --srcs ${SOY_BASE}/examples/simple.soy
 
