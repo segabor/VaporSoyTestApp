@@ -8,7 +8,7 @@ public func routes(_ router: Router) throws {
         return try req.view().render("index")
     }
 
-    // JavaScript examples
+    // Client-Side rendering entrypoints
     router.get("js", "simple", "helloWorld") { req in
         return try req.view().render("js_simple/helloWorld")
     }
@@ -19,14 +19,17 @@ public func routes(_ router: Router) throws {
         return try req.view().render("js_simple/helloNames", ["name": "John Appleseed"])
     }
 
-    // Swift examples
+    // Server-Side rendering entrypoints
     router.get("swift", "simple", "helloWorld") { req in
         return try req.view().render("swift_simple/helloWorld")
     }
     router.get("swift", "simple", "helloName") { req in
         return try req.view().render("swift_simple/helloName", ["name": "John Appleseed"])
     }
+    router.post(HelloName.self, at: "swift", "simple", "helloName") { req, form in
+        return try req.view().render("swift_simple/helloName", ["name": form.name])
+    }
     router.get("swift", "simple", "helloNames") { req in
-        return try req.view().render("swift_simple/helloNames", ["name": "John Appleseed"])
+        return try req.view().render("swift_simple/helloNames", ["names": ["John", "Peter", "Ramsey"]])
     }
 }

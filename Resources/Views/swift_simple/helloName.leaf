@@ -1,0 +1,31 @@
+#set("body") {
+    <h4>Template</h4>
+    <pre>
+/**
+ * Says hello to a person (or to the world if no person is given).
+ */
+{namespace soy.examples.simple\}
+
+{template .helloName\}
+  {@param? name: string\}  /** The name of the person to say hello to. */
+  {if $name\}
+    {msg desc="Says hello to a person."\}
+      Hello {$name\}!
+    {/msg\}
+  {else\}
+    {call .helloWorld /\}
+  {/if\}
+{/template\}
+    </pre>
+
+    <h4>Input Form</h4>
+    <form method="POST">
+        <label for="name">What's your name? <input name="name" type="text" value="#(name)"></label>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h4>Output</h4>
+    <div id="output">#soy("soy.examples.simple.helloName", name)</div>
+}
+
+#embed("soy")
