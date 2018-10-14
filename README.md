@@ -15,7 +15,7 @@ Just a few web templating solution can do this trick. Not to mention that Closur
 
 # How does it work?
 
-In order to use templates they must be compiled first. The resulted source contains the actual renderers that produces the part of the final web content described in the template file.
+In order to use templates they must be compiled first. The resulted source contains the actual renderers that produce the part of the final web content described in the template file.
 For the browser, target language is JavaScript. On server side you choose. Primary languages are Java and Python but I included Swift support as well.
 
 This demo app includes an experimental version of Soy compiler that transforms templates to Swift functions. Check out them in `Tools` folder. Helper scripts `soy2js.sh` and `soy2swift.sh` are also provided.
@@ -37,7 +37,7 @@ You can try out three simple templates rendered on client and server-side.
 
 # Interesting stuff! Can I use it now for production?
 
-Sorry, bad news. This is just an experimental project, far from stable, working version. Even the included compiler is full of hack and generates buggy stuff so I needed to fix the source to make it work.
+Sorry, bad news. This is just an experimental project, far from a stable, working version. Even the included compiler is full of hack and generates buggy stuff so I needed to fix the source to make it work.
 
 I made this demo for the public to see if it raises enough interest.
 
