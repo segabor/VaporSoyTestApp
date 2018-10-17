@@ -31,9 +31,9 @@ This demo app includes an experimental version of Soy compiler that transforms t
 
 # Enough! How can I try it out?
 
-Clone this repository on your computer, build and run it as a usual Vapor app and jump to the home page.
+Live [demo page](http://vaporsoy.vapor.cloud/) for the impatient.
 
-You can try out three simple templates rendered on client and server-side.
+Otherwise clone this repository on your computer, build and run it as a usual Vapor app and jump to the home page.
 
 # Interesting stuff! Can I use it now for production?
 
