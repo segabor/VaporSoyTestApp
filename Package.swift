@@ -9,10 +9,10 @@ let package = Package(
 
         .package(url: "https://github.com/vapor/leaf.git", from: "3.0.0"),
 
-        .package(url: "https://github.com/segabor/Soy.git", .branch("master"))
+        .package(url: "https://github.com/segabor/SoyKit.git", .branch("master"))
     ],
     targets: [
-        .target(name: "App", dependencies: ["Leaf", "Vapor", "Soy"], exclude: ["Config", "Database", "Public", "Resources"]),
+        .target(name: "App", dependencies: ["Leaf", "Vapor", "SoyKit"], exclude: ["Config", "Database", "Public", "Resources"]),
         .target(name: "Run", dependencies: ["App"]),
         .testTarget(name: "AppTests", dependencies: ["App"])
     ]
