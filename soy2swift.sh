@@ -10,7 +10,7 @@ if [ ! -d $SOY_OUT ]; then
   mkdir -p $SOY_OUT
 fi
 
-java -jar Tools/Soy/lib/soy-2018-03-14-SoyToSwiftSrcCompiler.jar \
+java -jar Tools/Soy/lib/soy-2019-08-22-SoyToSwiftSrcCompiler.jar \
   --outputPathFormat ${SOY_OUT}/Simple.swift \
   --srcs ${SOY_BASE}/examples/simple.soy
 

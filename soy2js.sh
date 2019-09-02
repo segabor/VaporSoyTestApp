@@ -10,7 +10,7 @@ if [ ! -d $SOY_OUT ]; then
   mkdir -p $SOY_OUT
 fi
 
-java -jar Tools/Soy/lib/soy-2018-03-14-SoyToJsSrcCompiler.jar \
+java -jar Tools/Soy/lib/soy-2019-08-22-SoyToJsSrcCompiler.jar \
   --outputPathFormat ${SOY_OUT}/simple.js \
   --srcs ${SOY_BASE}/examples/simple.soy
 
